@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: Hw
+Version: 0.0.1
+Summary: My short description
+Home-page: https://github.com/leticiagcsilva/Cloud_Data_Engineer_Cognizant_-2-DIO/tree/main/Criacao_de_pacotes
+Author: Leticia Gomes
+Author-email: leticiagomes_datascience@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Hw
+
+Description. 
+The package package_name is used to:
+- print Hello world
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Hw
+
+```bash
+pip install Hw
+```
+
+## Usage
+
+```python
+from Hw import file1_name
+file1_name.my_function()
+```
+
+## Author
+Leticia Gomes
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
