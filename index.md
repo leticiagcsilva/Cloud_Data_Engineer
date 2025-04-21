@@ -6,7 +6,7 @@ This space indexes all subprojects and cloud-based solutions, offering detailed 
 
 ---
 
-## Project Index
+## 🔍 Project Index
 
 ### 1. [ETL: ANEEL Complaint Data to AWS](./etl_ANEEL_AWS/README.md)
 **Description:**  
@@ -15,6 +15,15 @@ Extracts consumer complaint data from the Brazilian electricity regulator (ANEEL
 - **Focus:** Cloud-native ETL pipeline
 - **Stack:** Python, Pandas, Boto3, AWS S3
 - **Automation:** Poetry + Taskipy
+
+---
+
+### 2. [Hadoop Ecosystem — PySpark Word Count](./Ecossistema_Hadoop/README.md)
+**Description:**  
+A distributed word count job using PySpark on Google Cloud Dataproc, reading from GCS and saving sorted word frequencies back to GCS.
+
+- **Focus:** Big Data, Hadoop ecosystem
+- **Stack:** PySpark, Dataproc, GCS
 
 ---
 
