@@ -2,7 +2,7 @@
 name = "etl-aneel-aws"
 version = "0.1.0"
 description = "ETL pipeline for public consumer complaint data from ANEEL to AWS S3"
-authors = ["Your Name <email@example.com>"]
+authors = ["Leticia Gomes <leticiagomes.datascience@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
