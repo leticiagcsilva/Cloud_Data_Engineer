@@ -18,7 +18,7 @@ To consolidate hands-on cloud projects that:
 
 ## Subprojects
 
-### 🔹 [ETL: ANEEL Complaint Data to AWS](./etl_ANEEL_AWS/)
+#### [ETL: ANEEL Complaint Data to AWS](./etl_ANEEL_AWS/)
 > Extracts consumer complaint data from the ANEEL public API, transforms the dataset using Pandas, and uploads it to an AWS S3 bucket.
 
 - **Technologies:** Python, AWS S3, Boto3, Poetry, Taskipy  
@@ -27,7 +27,7 @@ To consolidate hands-on cloud projects that:
 
 ---
 
-### 🔹 [Hadoop Ecosystem — PySpark Word Count](./Ecossistema_Hadoop/)
+#### [Hadoop Ecosystem — PySpark Word Count](./Ecossistema_Hadoop/)
 > Runs a distributed word count job using PySpark on Google Cloud Dataproc, processing a text file stored on GCS and saving the sorted word frequencies.
 
 - **Technologies:** PySpark, Google Cloud Dataproc, GCS  
