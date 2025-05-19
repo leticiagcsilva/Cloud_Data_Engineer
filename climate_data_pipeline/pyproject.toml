@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "data_transform"
+version = "0.1.0"
+description = "Projeto dbt com dados climáticos das capitais do Nordeste via Open-Meteo e DuckDB."
+authors = ["Letícia Gomes"]
+
+[tool.poetry.dependencies]
+dbt-duckdb = "^1.7.0"
+python = ">=3.9,<3.12"
+pandas = "^2.2.3"
+requests = "^2.32.3"
+
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.12.0"
+
+[tool.taskipy.tasks]
+dbt_seed = "dbt seed"
+dbt_run = "dbt run"
+dbt_docs = "dbt docs generate && dbt docs serve"
+dbt_all = "poetry run task dbt_seed && poetry run task dbt_run && poetry run task dbt_docs"
+git_stage = "git add ."
+git_commit = "git commit -m 'Atualizações no projeto'"
+git_push = "git push"
+git_all = "poetry run task git_stage && poetry run task git_commit && poetry run task git_push"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

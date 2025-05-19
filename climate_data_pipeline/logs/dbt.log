@@ -1,0 +1,906 @@
+[0m22:08:55.409744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf17f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3f5900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3f5fc0>]}
+
+
+============================== 22:08:55.447353 | c588a75d-b9e3-4027-86bf-8583a8b6a5d2 ==============================
+[0m22:08:55.447353 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:08:55.448144 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:08:56.359759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce84af0>]}
+[0m22:08:56.418920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d356920>]}
+[0m22:08:56.422464 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m22:08:56.815937 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m22:08:56.816861 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:08:56.817309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d858a90>]}
+[0m22:08:58.493873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dda8580>]}
+[0m22:08:58.630094 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:08:58.631833 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:08:58.701679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ded6980>]}
+[0m22:08:58.702373 [info ] [MainThread]: Found 2 models, 1 seed, 1 test, 1 source, 428 macros
+[0m22:08:58.702894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dc5efb0>]}
+[0m22:08:58.704874 [info ] [MainThread]: 
+[0m22:08:58.705397 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:08:58.705881 [info ] [MainThread]: 
+[0m22:08:58.706570 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:08:58.707605 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_data_transform'
+[0m22:08:58.791914 [debug] [ThreadPool]: Using duckdb connection "list_data_transform"
+[0m22:08:58.792531 [debug] [ThreadPool]: On list_data_transform: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"data_transform"'
+    
+  
+  
+[0m22:08:58.792985 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:08:58.811136 [debug] [ThreadPool]: SQL status: OK in 0.018 seconds
+[0m22:08:58.812867 [debug] [ThreadPool]: On list_data_transform: Close
+[0m22:08:58.813851 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_transform, now create_data_transform_main)
+[0m22:08:58.814516 [debug] [ThreadPool]: Creating schema "database: "data_transform"
+schema: "main"
+"
+[0m22:08:58.823302 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:08:58.823891 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='data_transform'
+        and type='sqlite'
+    
+  
+[0m22:08:58.824354 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:08:58.825461 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:08:58.827029 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:08:58.827500 [debug] [ThreadPool]: On create_data_transform_main: BEGIN
+[0m22:08:58.828118 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:08:58.828575 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:08:58.829132 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+    
+        create schema if not exists "data_transform"."main"
+    
+[0m22:08:58.829878 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:08:58.831096 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:08:58.831600 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:08:58.832064 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:08:58.832732 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:08:58.833223 [debug] [ThreadPool]: On create_data_transform_main: Close
+[0m22:08:58.840604 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_data_transform_main, now list_data_transform_main)
+[0m22:08:58.848458 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:08:58.849013 [debug] [ThreadPool]: On list_data_transform_main: BEGIN
+[0m22:08:58.849457 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:08:58.850186 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:08:58.850640 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:08:58.851107 [debug] [ThreadPool]: On list_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform_main"} */
+select
+      'data_transform' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'data_transform'
+  
+[0m22:08:58.874907 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m22:08:58.876416 [debug] [ThreadPool]: On list_data_transform_main: ROLLBACK
+[0m22:08:58.877144 [debug] [ThreadPool]: Failed to rollback 'list_data_transform_main'
+[0m22:08:58.877572 [debug] [ThreadPool]: On list_data_transform_main: Close
+[0m22:08:58.878375 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ded5ed0>]}
+[0m22:08:58.878984 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:08:58.879422 [debug] [MainThread]: On master: BEGIN
+[0m22:08:58.879853 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:08:58.880491 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:08:58.880926 [debug] [MainThread]: On master: COMMIT
+[0m22:08:58.881339 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:08:58.881738 [debug] [MainThread]: On master: COMMIT
+[0m22:08:58.882281 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:08:58.882702 [debug] [MainThread]: On master: Close
+[0m22:08:58.886587 [debug] [Thread-1 (]: Began running node seed.data_transform.clima_diario_capitais_ne
+[0m22:08:58.887230 [info ] [Thread-1 (]: 1 of 1 START seed file main.clima_diario_capitais_ne ........................... [RUN]
+[0m22:08:58.887857 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_transform_main, now seed.data_transform.clima_diario_capitais_ne)
+[0m22:08:58.888348 [debug] [Thread-1 (]: Began compiling node seed.data_transform.clima_diario_capitais_ne
+[0m22:08:58.888822 [debug] [Thread-1 (]: Began executing node seed.data_transform.clima_diario_capitais_ne
+[0m22:08:59.787144 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:08:59.787821 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: BEGIN
+[0m22:08:59.788327 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:08:59.789208 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:08:59.789760 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:08:59.790286 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "seed.data_transform.clima_diario_capitais_ne"} */
+
+    create table "data_transform"."main"."clima_diario_capitais_ne" ("data" date,"temp_max" float8,"temp_min" float8,"precipitacao" float8,"cidade" text,"uf" text)
+  
+[0m22:08:59.791219 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:08:59.805520 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:08:59.806196 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: 
+          COPY "data_transform"."main"."clima_diario_capitais_ne" FROM '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/seeds/clima_diario_capitais_ne.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:09:00.054198 [debug] [Thread-1 (]: SQL status: OK in 0.247 seconds
+[0m22:09:00.061082 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.data_transform.clima_diario_capitais_ne"
+[0m22:09:00.078594 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: COMMIT
+[0m22:09:00.079216 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:09:00.079716 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: COMMIT
+[0m22:09:00.083154 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:09:00.085788 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: Close
+[0m22:09:00.088436 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c588a75d-b9e3-4027-86bf-8583a8b6a5d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd9cee0>]}
+[0m22:09:00.089215 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file main.clima_diario_capitais_ne ....................... [[32mINSERT 16443[0m in 1.20s]
+[0m22:09:00.090053 [debug] [Thread-1 (]: Finished running node seed.data_transform.clima_diario_capitais_ne
+[0m22:09:00.091446 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:00.091966 [debug] [MainThread]: On master: BEGIN
+[0m22:09:00.092452 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:09:00.093236 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:09:00.093718 [debug] [MainThread]: On master: COMMIT
+[0m22:09:00.094184 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:00.094632 [debug] [MainThread]: On master: COMMIT
+[0m22:09:00.095253 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:09:00.095735 [debug] [MainThread]: On master: Close
+[0m22:09:00.096334 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:09:00.096783 [debug] [MainThread]: Connection 'seed.data_transform.clima_diario_capitais_ne' was properly closed.
+[0m22:09:00.097256 [info ] [MainThread]: 
+[0m22:09:00.097811 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 1.39 seconds (1.39s).
+[0m22:09:00.098902 [debug] [MainThread]: Command end result
+[0m22:09:00.129604 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:09:00.131824 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:09:00.141068 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/run_results.json
+[0m22:09:00.141686 [info ] [MainThread]: 
+[0m22:09:00.142336 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:09:00.142870 [info ] [MainThread]: 
+[0m22:09:00.143415 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m22:09:00.391923 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 5.056961, "process_in_blocks": "0", "process_kernel_time": 0.321355, "process_mem_max_rss": "171925504", "process_out_blocks": "0", "process_user_time": 4.899327}
+[0m22:09:00.392817 [debug] [MainThread]: Command `dbt seed` succeeded at 22:09:00.392651 after 5.06 seconds
+[0m22:09:00.393502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf17f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dbf9c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dbf9a80>]}
+[0m22:09:00.394109 [debug] [MainThread]: Flushing usage events
+[0m22:09:01.149819 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:09:12.710948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048fbf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e19870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e19f30>]}
+
+
+============================== 22:09:12.717422 | ceae8b0b-c1b3-44ab-b97e-1b4d41601595 ==============================
+[0m22:09:12.717422 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:09:12.718203 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m22:09:13.007601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1037eacb0>]}
+[0m22:09:13.067897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ea3ca0>]}
+[0m22:09:13.071031 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m22:09:13.219188 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m22:09:13.392709 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:09:13.393134 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:09:13.462135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1063cc490>]}
+[0m22:09:13.573770 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:09:13.575444 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:09:13.587566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061ad540>]}
+[0m22:09:13.588088 [info ] [MainThread]: Found 2 models, 1 seed, 1 test, 1 source, 428 macros
+[0m22:09:13.588624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10639f340>]}
+[0m22:09:13.590309 [info ] [MainThread]: 
+[0m22:09:13.590782 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:09:13.591187 [info ] [MainThread]: 
+[0m22:09:13.591771 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:09:13.597418 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_data_transform'
+[0m22:09:13.660377 [debug] [ThreadPool]: Using duckdb connection "list_data_transform"
+[0m22:09:13.660934 [debug] [ThreadPool]: On list_data_transform: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"data_transform"'
+    
+  
+  
+[0m22:09:13.661367 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:09:13.676455 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m22:09:13.677956 [debug] [ThreadPool]: On list_data_transform: Close
+[0m22:09:13.678718 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_transform, now create_data_transform_main)
+[0m22:09:13.679294 [debug] [ThreadPool]: Creating schema "database: "data_transform"
+schema: "main"
+"
+[0m22:09:13.686885 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:09:13.687316 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='data_transform'
+        and type='sqlite'
+    
+  
+[0m22:09:13.687732 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:09:13.688665 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:09:13.690052 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:09:13.690473 [debug] [ThreadPool]: On create_data_transform_main: BEGIN
+[0m22:09:13.691067 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:09:13.691468 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:09:13.691867 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+    
+        create schema if not exists "data_transform"."main"
+    
+[0m22:09:13.692502 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:09:13.693454 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:09:13.693874 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:09:13.694270 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:09:13.694802 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:09:13.695220 [debug] [ThreadPool]: On create_data_transform_main: Close
+[0m22:09:13.696549 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_data_transform_main, now list_data_transform_main)
+[0m22:09:13.702856 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:09:13.703281 [debug] [ThreadPool]: On list_data_transform_main: BEGIN
+[0m22:09:13.703668 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:09:13.704328 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:09:13.704743 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:09:13.705143 [debug] [ThreadPool]: On list_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform_main"} */
+select
+      'data_transform' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'data_transform'
+  
+[0m22:09:13.725554 [debug] [ThreadPool]: SQL status: OK in 0.020 seconds
+[0m22:09:13.726891 [debug] [ThreadPool]: On list_data_transform_main: ROLLBACK
+[0m22:09:13.727522 [debug] [ThreadPool]: Failed to rollback 'list_data_transform_main'
+[0m22:09:13.727868 [debug] [ThreadPool]: On list_data_transform_main: Close
+[0m22:09:13.728702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106414880>]}
+[0m22:09:13.729212 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:13.729566 [debug] [MainThread]: On master: BEGIN
+[0m22:09:13.729904 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:09:13.730481 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:09:13.730844 [debug] [MainThread]: On master: COMMIT
+[0m22:09:13.731200 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:13.731542 [debug] [MainThread]: On master: COMMIT
+[0m22:09:13.732054 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:09:13.732631 [debug] [MainThread]: On master: Close
+[0m22:09:13.734602 [debug] [Thread-1 (]: Began running node model.data_transform.stg_clima
+[0m22:09:13.735160 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_clima ..................................... [RUN]
+[0m22:09:13.735700 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_transform_main, now model.data_transform.stg_clima)
+[0m22:09:13.736123 [debug] [Thread-1 (]: Began compiling node model.data_transform.stg_clima
+[0m22:09:13.744945 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_transform.stg_clima"
+[0m22:09:13.746344 [debug] [Thread-1 (]: Began executing node model.data_transform.stg_clima
+[0m22:09:13.839962 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_transform.stg_clima"
+[0m22:09:13.841429 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:09:13.842021 [debug] [Thread-1 (]: On model.data_transform.stg_clima: BEGIN
+[0m22:09:13.842580 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:09:13.843530 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:09:13.844163 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:09:13.844958 [debug] [Thread-1 (]: On model.data_transform.stg_clima: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.stg_clima"} */
+
+  
+  create view "data_transform"."main"."stg_clima__dbt_tmp" as (
+    with raw as (
+    select
+        cast(data as date) as data,
+        lower(cidade) as cidade,
+        uf,
+        cast(temp_max as float) as temp_max,
+        cast(temp_min as float) as temp_min,
+        cast(precipitacao as float) as precipitacao
+    from "data_transform"."clima"."clima_diario_capitais_ne"
+)
+select * from raw
+  );
+
+[0m22:09:13.851054 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.stg_clima"} */
+
+  
+  create view "data_transform"."main"."stg_clima__dbt_tmp" as (
+    with raw as (
+    select
+        cast(data as date) as data,
+        lower(cidade) as cidade,
+        uf,
+        cast(temp_max as float) as temp_max,
+        cast(temp_min as float) as temp_min,
+        cast(precipitacao as float) as precipitacao
+    from "data_transform"."clima"."clima_diario_capitais_ne"
+)
+select * from raw
+  );
+
+[0m22:09:13.851695 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:09:13.852413 [debug] [Thread-1 (]: On model.data_transform.stg_clima: ROLLBACK
+[0m22:09:13.855770 [debug] [Thread-1 (]: Failed to rollback 'model.data_transform.stg_clima'
+[0m22:09:13.856346 [debug] [Thread-1 (]: On model.data_transform.stg_clima: Close
+[0m22:09:13.857812 [debug] [Thread-1 (]: Runtime Error in model stg_clima (models/staging/stg_clima.sql)
+  Catalog Error: Table with name clima_diario_capitais_ne does not exist!
+  Did you mean "main.clima_diario_capitais_ne"?
+  
+  LINE 13:     from "data_transform"."clima"."clima_diario_capitais_ne"
+                    ^
+[0m22:09:13.860392 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ceae8b0b-c1b3-44ab-b97e-1b4d41601595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062fd060>]}
+[0m22:09:13.861462 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model main.stg_clima ............................ [[31mERROR[0m in 0.12s]
+[0m22:09:13.862390 [debug] [Thread-1 (]: Finished running node model.data_transform.stg_clima
+[0m22:09:13.863214 [debug] [Thread-4 (]: Marking all children of 'model.data_transform.stg_clima' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_clima (models/staging/stg_clima.sql)
+  Catalog Error: Table with name clima_diario_capitais_ne does not exist!
+  Did you mean "main.clima_diario_capitais_ne"?
+  
+  LINE 13:     from "data_transform"."clima"."clima_diario_capitais_ne"
+                    ^.
+[0m22:09:13.864758 [debug] [Thread-1 (]: Began running node model.data_transform.mart_clima_resumo
+[0m22:09:13.865454 [info ] [Thread-1 (]: 2 of 2 SKIP relation main.mart_clima_resumo .................................... [[33mSKIP[0m]
+[0m22:09:13.866140 [debug] [Thread-1 (]: Finished running node model.data_transform.mart_clima_resumo
+[0m22:09:13.867546 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:13.868073 [debug] [MainThread]: On master: BEGIN
+[0m22:09:13.868537 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:09:13.869303 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:09:13.869803 [debug] [MainThread]: On master: COMMIT
+[0m22:09:13.870292 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:09:13.870764 [debug] [MainThread]: On master: COMMIT
+[0m22:09:13.871419 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:09:13.871919 [debug] [MainThread]: On master: Close
+[0m22:09:13.872514 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:09:13.872968 [debug] [MainThread]: Connection 'model.data_transform.stg_clima' was properly closed.
+[0m22:09:13.873516 [info ] [MainThread]: 
+[0m22:09:13.874041 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.28 seconds (0.28s).
+[0m22:09:13.875126 [debug] [MainThread]: Command end result
+[0m22:09:13.907224 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:09:13.909459 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:09:13.919927 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/run_results.json
+[0m22:09:13.920487 [info ] [MainThread]: 
+[0m22:09:13.921059 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m22:09:13.921585 [info ] [MainThread]: 
+[0m22:09:13.922191 [error] [MainThread]:   Runtime Error in model stg_clima (models/staging/stg_clima.sql)
+  Catalog Error: Table with name clima_diario_capitais_ne does not exist!
+  Did you mean "main.clima_diario_capitais_ne"?
+  
+  LINE 13:     from "data_transform"."clima"."clima_diario_capitais_ne"
+                    ^
+[0m22:09:13.922704 [info ] [MainThread]: 
+[0m22:09:13.923262 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m22:09:13.925140 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.2879033, "process_in_blocks": "0", "process_kernel_time": 0.26817, "process_mem_max_rss": "127909888", "process_out_blocks": "0", "process_user_time": 2.420675}
+[0m22:09:13.925868 [debug] [MainThread]: Command `dbt run` failed at 22:09:13.925718 after 1.29 seconds
+[0m22:09:13.926531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048fbf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10633f070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10633f0a0>]}
+[0m22:09:13.927169 [debug] [MainThread]: Flushing usage events
+[0m22:09:14.577454 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:23.202793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033a3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048b5870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048b5f30>]}
+
+
+============================== 22:10:23.209110 | 876a3198-ac93-4ab6-8f15-045486d2e710 ==============================
+[0m22:10:23.209110 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:10:23.209839 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt seed', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:10:23.498199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102292ce0>]}
+[0m22:10:23.558506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10488e6e0>]}
+[0m22:10:23.561577 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m22:10:23.704972 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m22:10:23.872255 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m22:10:23.872911 [debug] [MainThread]: Partial parsing: updated file: data_transform://models/staging/stg_clima.sql
+[0m22:10:24.377240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105015060>]}
+[0m22:10:24.504798 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:24.506340 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:24.518212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ffc490>]}
+[0m22:10:24.518729 [info ] [MainThread]: Found 2 models, 1 seed, 1 test, 1 source, 428 macros
+[0m22:10:24.519174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104def070>]}
+[0m22:10:24.520631 [info ] [MainThread]: 
+[0m22:10:24.521082 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:10:24.521515 [info ] [MainThread]: 
+[0m22:10:24.522076 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:10:24.522828 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_data_transform'
+[0m22:10:24.585275 [debug] [ThreadPool]: Using duckdb connection "list_data_transform"
+[0m22:10:24.585781 [debug] [ThreadPool]: On list_data_transform: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"data_transform"'
+    
+  
+  
+[0m22:10:24.586181 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:24.599921 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m22:10:24.601424 [debug] [ThreadPool]: On list_data_transform: Close
+[0m22:10:24.602190 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_transform, now create_data_transform_main)
+[0m22:10:24.602770 [debug] [ThreadPool]: Creating schema "database: "data_transform"
+schema: "main"
+"
+[0m22:10:24.610486 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:24.610929 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='data_transform'
+        and type='sqlite'
+    
+  
+[0m22:10:24.611372 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:10:24.612373 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:10:24.613775 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:24.614188 [debug] [ThreadPool]: On create_data_transform_main: BEGIN
+[0m22:10:24.614737 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:24.615139 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:24.615540 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+    
+        create schema if not exists "data_transform"."main"
+    
+[0m22:10:24.616158 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:24.617114 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:10:24.617529 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:24.617923 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:10:24.618463 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:24.618862 [debug] [ThreadPool]: On create_data_transform_main: Close
+[0m22:10:24.624852 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_data_transform_main, now list_data_transform_main)
+[0m22:10:24.630977 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:24.631386 [debug] [ThreadPool]: On list_data_transform_main: BEGIN
+[0m22:10:24.631740 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:10:24.632331 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:10:24.632702 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:24.633091 [debug] [ThreadPool]: On list_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform_main"} */
+select
+      'data_transform' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'data_transform'
+  
+[0m22:10:24.652430 [debug] [ThreadPool]: SQL status: OK in 0.019 seconds
+[0m22:10:24.653751 [debug] [ThreadPool]: On list_data_transform_main: ROLLBACK
+[0m22:10:24.654364 [debug] [ThreadPool]: Failed to rollback 'list_data_transform_main'
+[0m22:10:24.654721 [debug] [ThreadPool]: On list_data_transform_main: Close
+[0m22:10:24.655711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ffc1c0>]}
+[0m22:10:24.656232 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:24.656593 [debug] [MainThread]: On master: BEGIN
+[0m22:10:24.656937 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:10:24.657482 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:10:24.657846 [debug] [MainThread]: On master: COMMIT
+[0m22:10:24.658204 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:24.658552 [debug] [MainThread]: On master: COMMIT
+[0m22:10:24.659022 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:10:24.659514 [debug] [MainThread]: On master: Close
+[0m22:10:24.661362 [debug] [Thread-1 (]: Began running node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:24.661963 [info ] [Thread-1 (]: 1 of 1 START seed file main.clima_diario_capitais_ne ........................... [RUN]
+[0m22:10:24.662488 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_transform_main, now seed.data_transform.clima_diario_capitais_ne)
+[0m22:10:24.662902 [debug] [Thread-1 (]: Began compiling node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:24.663324 [debug] [Thread-1 (]: Began executing node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:25.334832 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:10:25.335343 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: BEGIN
+[0m22:10:25.335729 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:10:25.336408 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:25.336798 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:10:25.337188 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "seed.data_transform.clima_diario_capitais_ne"} */
+truncate table "data_transform"."main"."clima_diario_capitais_ne"
+[0m22:10:25.338275 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:25.349143 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:10:25.349596 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: 
+          COPY "data_transform"."main"."clima_diario_capitais_ne" FROM '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/seeds/clima_diario_capitais_ne.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:10:25.480476 [debug] [Thread-1 (]: SQL status: OK in 0.130 seconds
+[0m22:10:25.486038 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.data_transform.clima_diario_capitais_ne"
+[0m22:10:25.495736 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: COMMIT
+[0m22:10:25.496161 [debug] [Thread-1 (]: Using duckdb connection "seed.data_transform.clima_diario_capitais_ne"
+[0m22:10:25.496577 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: COMMIT
+[0m22:10:25.502521 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:10:25.504989 [debug] [Thread-1 (]: On seed.data_transform.clima_diario_capitais_ne: Close
+[0m22:10:25.506978 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '876a3198-ac93-4ab6-8f15-045486d2e710', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f9dbd0>]}
+[0m22:10:25.507656 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file main.clima_diario_capitais_ne ....................... [[32mINSERT 16443[0m in 0.84s]
+[0m22:10:25.508356 [debug] [Thread-1 (]: Finished running node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:25.509523 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:25.509939 [debug] [MainThread]: On master: BEGIN
+[0m22:10:25.510329 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:10:25.510951 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:10:25.511358 [debug] [MainThread]: On master: COMMIT
+[0m22:10:25.511762 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:25.512170 [debug] [MainThread]: On master: COMMIT
+[0m22:10:25.512722 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:10:25.513136 [debug] [MainThread]: On master: Close
+[0m22:10:25.513638 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:10:25.514020 [debug] [MainThread]: Connection 'seed.data_transform.clima_diario_capitais_ne' was properly closed.
+[0m22:10:25.514432 [info ] [MainThread]: 
+[0m22:10:25.515032 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 0.99 seconds (0.99s).
+[0m22:10:25.515919 [debug] [MainThread]: Command end result
+[0m22:10:25.543958 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:25.545970 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:25.555353 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/run_results.json
+[0m22:10:25.555903 [info ] [MainThread]: 
+[0m22:10:25.556507 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:10:25.556986 [info ] [MainThread]: 
+[0m22:10:25.557490 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m22:10:25.559175 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 2.427475, "process_in_blocks": "0", "process_kernel_time": 0.264801, "process_mem_max_rss": "159485952", "process_out_blocks": "0", "process_user_time": 3.497652}
+[0m22:10:25.559809 [debug] [MainThread]: Command `dbt seed` succeeded at 22:10:25.559674 after 2.43 seconds
+[0m22:10:25.560358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1033a3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104950df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104952a70>]}
+[0m22:10:25.561029 [debug] [MainThread]: Flushing usage events
+[0m22:10:26.273071 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:31.225738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce67f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e385900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e385fc0>]}
+
+
+============================== 22:10:31.233087 | 39d897cf-7e77-4f44-8e48-bd8857eee860 ==============================
+[0m22:10:31.233087 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:10:31.233931 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:10:31.531420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb9c670>]}
+[0m22:10:31.590915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de2f790>]}
+[0m22:10:31.593917 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m22:10:31.740497 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m22:10:31.913951 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:10:31.914391 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:10:31.986165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e938550>]}
+[0m22:10:32.099466 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:32.101612 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:32.112706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e93a6e0>]}
+[0m22:10:32.113216 [info ] [MainThread]: Found 2 models, 1 seed, 1 test, 1 source, 428 macros
+[0m22:10:32.113690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e93a710>]}
+[0m22:10:32.115253 [info ] [MainThread]: 
+[0m22:10:32.115755 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:10:32.116266 [info ] [MainThread]: 
+[0m22:10:32.116869 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:10:32.123268 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_data_transform'
+[0m22:10:32.181549 [debug] [ThreadPool]: Using duckdb connection "list_data_transform"
+[0m22:10:32.182125 [debug] [ThreadPool]: On list_data_transform: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"data_transform"'
+    
+  
+  
+[0m22:10:32.182563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:32.197875 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m22:10:32.199444 [debug] [ThreadPool]: On list_data_transform: Close
+[0m22:10:32.200271 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_transform, now create_data_transform_main)
+[0m22:10:32.200889 [debug] [ThreadPool]: Creating schema "database: "data_transform"
+schema: "main"
+"
+[0m22:10:32.209083 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:32.209556 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='data_transform'
+        and type='sqlite'
+    
+  
+[0m22:10:32.209975 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:10:32.210995 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:10:32.212410 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:32.212824 [debug] [ThreadPool]: On create_data_transform_main: BEGIN
+[0m22:10:32.213377 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:32.213781 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:32.214187 [debug] [ThreadPool]: On create_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "create_data_transform_main"} */
+
+    
+    
+        create schema if not exists "data_transform"."main"
+    
+[0m22:10:32.214804 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:32.215760 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:10:32.216182 [debug] [ThreadPool]: Using duckdb connection "create_data_transform_main"
+[0m22:10:32.216584 [debug] [ThreadPool]: On create_data_transform_main: COMMIT
+[0m22:10:32.217155 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:10:32.217585 [debug] [ThreadPool]: On create_data_transform_main: Close
+[0m22:10:32.218979 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_data_transform_main, now list_data_transform_main)
+[0m22:10:32.225419 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:32.225860 [debug] [ThreadPool]: On list_data_transform_main: BEGIN
+[0m22:10:32.226254 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:10:32.226898 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:10:32.227308 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:32.227728 [debug] [ThreadPool]: On list_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform_main"} */
+select
+      'data_transform' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'data_transform'
+  
+[0m22:10:32.248491 [debug] [ThreadPool]: SQL status: OK in 0.020 seconds
+[0m22:10:32.250055 [debug] [ThreadPool]: On list_data_transform_main: ROLLBACK
+[0m22:10:32.250772 [debug] [ThreadPool]: Failed to rollback 'list_data_transform_main'
+[0m22:10:32.251145 [debug] [ThreadPool]: On list_data_transform_main: Close
+[0m22:10:32.252026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e443d00>]}
+[0m22:10:32.252543 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:32.252915 [debug] [MainThread]: On master: BEGIN
+[0m22:10:32.253264 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:10:32.253901 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:10:32.254271 [debug] [MainThread]: On master: COMMIT
+[0m22:10:32.254638 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:32.254991 [debug] [MainThread]: On master: COMMIT
+[0m22:10:32.255476 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:10:32.255851 [debug] [MainThread]: On master: Close
+[0m22:10:32.257565 [debug] [Thread-1 (]: Began running node model.data_transform.stg_clima
+[0m22:10:32.258117 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_clima ..................................... [RUN]
+[0m22:10:32.258623 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_transform_main, now model.data_transform.stg_clima)
+[0m22:10:32.259048 [debug] [Thread-1 (]: Began compiling node model.data_transform.stg_clima
+[0m22:10:32.267579 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_transform.stg_clima"
+[0m22:10:32.268346 [debug] [Thread-1 (]: Began executing node model.data_transform.stg_clima
+[0m22:10:32.358964 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_transform.stg_clima"
+[0m22:10:32.360145 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:10:32.360740 [debug] [Thread-1 (]: On model.data_transform.stg_clima: BEGIN
+[0m22:10:32.361312 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:10:32.362193 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.362778 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:10:32.363371 [debug] [Thread-1 (]: On model.data_transform.stg_clima: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.stg_clima"} */
+
+  
+  create view "data_transform"."main"."stg_clima__dbt_tmp" as (
+    with raw as (
+    select
+        cast(data as date) as data,
+        lower(cidade) as cidade,
+        uf,
+        cast(temp_max as float) as temp_max,
+        cast(temp_min as float) as temp_min,
+        cast(precipitacao as float) as precipitacao
+    from "data_transform"."main"."clima_diario_capitais_ne"
+)
+select * from raw
+  );
+
+[0m22:10:32.364582 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.373120 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:10:32.373765 [debug] [Thread-1 (]: On model.data_transform.stg_clima: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.stg_clima"} */
+alter view "data_transform"."main"."stg_clima__dbt_tmp" rename to "stg_clima"
+[0m22:10:32.374680 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:10:32.388474 [debug] [Thread-1 (]: On model.data_transform.stg_clima: COMMIT
+[0m22:10:32.389158 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:10:32.389719 [debug] [Thread-1 (]: On model.data_transform.stg_clima: COMMIT
+[0m22:10:32.391190 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.398195 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.stg_clima"
+[0m22:10:32.398902 [debug] [Thread-1 (]: On model.data_transform.stg_clima: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.stg_clima"} */
+drop view if exists "data_transform"."main"."stg_clima__dbt_backup" cascade
+[0m22:10:32.399796 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:10:32.403337 [debug] [Thread-1 (]: On model.data_transform.stg_clima: Close
+[0m22:10:32.405756 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd57820>]}
+[0m22:10:32.406683 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_clima ................................ [[32mOK[0m in 0.15s]
+[0m22:10:32.407575 [debug] [Thread-1 (]: Finished running node model.data_transform.stg_clima
+[0m22:10:32.408517 [debug] [Thread-1 (]: Began running node model.data_transform.mart_clima_resumo
+[0m22:10:32.409301 [info ] [Thread-1 (]: 2 of 2 START sql view model main.mart_clima_resumo ............................. [RUN]
+[0m22:10:32.410002 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_transform.stg_clima, now model.data_transform.mart_clima_resumo)
+[0m22:10:32.410589 [debug] [Thread-1 (]: Began compiling node model.data_transform.mart_clima_resumo
+[0m22:10:32.414731 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_transform.mart_clima_resumo"
+[0m22:10:32.416067 [debug] [Thread-1 (]: Began executing node model.data_transform.mart_clima_resumo
+[0m22:10:32.423488 [debug] [Thread-1 (]: Writing runtime sql for node "model.data_transform.mart_clima_resumo"
+[0m22:10:32.424900 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.mart_clima_resumo"
+[0m22:10:32.425474 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: BEGIN
+[0m22:10:32.426025 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:10:32.426917 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.427495 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.mart_clima_resumo"
+[0m22:10:32.428068 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.mart_clima_resumo"} */
+
+  
+  create view "data_transform"."main"."mart_clima_resumo__dbt_tmp" as (
+    with base as (
+    select
+        cidade,
+        uf,
+        extract(year from data) as ano,
+        avg(temp_max) as media_temp_max,
+        avg(temp_min) as media_temp_min,
+        sum(precipitacao) as total_precipitacao
+    from "data_transform"."main"."stg_clima"
+    group by cidade, uf, ano
+)
+select * from base
+order by cidade, ano
+  );
+
+[0m22:10:32.429709 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.434039 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.mart_clima_resumo"
+[0m22:10:32.434873 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.mart_clima_resumo"} */
+alter view "data_transform"."main"."mart_clima_resumo__dbt_tmp" rename to "mart_clima_resumo"
+[0m22:10:32.436354 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.438567 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: COMMIT
+[0m22:10:32.439234 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.mart_clima_resumo"
+[0m22:10:32.439802 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: COMMIT
+[0m22:10:32.441006 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m22:10:32.446748 [debug] [Thread-1 (]: Using duckdb connection "model.data_transform.mart_clima_resumo"
+[0m22:10:32.447440 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "node_id": "model.data_transform.mart_clima_resumo"} */
+drop view if exists "data_transform"."main"."mart_clima_resumo__dbt_backup" cascade
+[0m22:10:32.448416 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m22:10:32.450678 [debug] [Thread-1 (]: On model.data_transform.mart_clima_resumo: Close
+[0m22:10:32.451594 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '39d897cf-7e77-4f44-8e48-bd8857eee860', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eebcd00>]}
+[0m22:10:32.452503 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.mart_clima_resumo ........................ [[32mOK[0m in 0.04s]
+[0m22:10:32.453772 [debug] [Thread-1 (]: Finished running node model.data_transform.mart_clima_resumo
+[0m22:10:32.455633 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:32.456193 [debug] [MainThread]: On master: BEGIN
+[0m22:10:32.456680 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:10:32.457721 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:10:32.458421 [debug] [MainThread]: On master: COMMIT
+[0m22:10:32.459173 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:10:32.459693 [debug] [MainThread]: On master: COMMIT
+[0m22:10:32.460468 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:10:32.460996 [debug] [MainThread]: On master: Close
+[0m22:10:32.461648 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:10:32.462117 [debug] [MainThread]: Connection 'model.data_transform.mart_clima_resumo' was properly closed.
+[0m22:10:32.462691 [info ] [MainThread]: 
+[0m22:10:32.463231 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.35 seconds (0.35s).
+[0m22:10:32.464422 [debug] [MainThread]: Command end result
+[0m22:10:32.494837 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:32.496887 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:32.506210 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/run_results.json
+[0m22:10:32.506848 [info ] [MainThread]: 
+[0m22:10:32.507480 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:10:32.507989 [info ] [MainThread]: 
+[0m22:10:32.508526 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m22:10:32.510304 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.3666539, "process_in_blocks": "0", "process_kernel_time": 0.245344, "process_mem_max_rss": "127934464", "process_out_blocks": "0", "process_user_time": 2.546094}
+[0m22:10:32.510999 [debug] [MainThread]: Command `dbt run` succeeded at 22:10:32.510852 after 1.37 seconds
+[0m22:10:32.511582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce67f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8ad780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e9681f0>]}
+[0m22:10:32.512152 [debug] [MainThread]: Flushing usage events
+[0m22:10:33.165752 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:48.805337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d43f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113259a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11325a110>]}
+
+
+============================== 22:10:48.811637 | 45d25264-0b5d-4904-9c88-5cdb1a91fdd3 ==============================
+[0m22:10:48.811637 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:10:48.812394 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:10:49.100491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113376d70>]}
+[0m22:10:49.161848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11322c100>]}
+[0m22:10:49.165108 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m22:10:49.307133 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m22:10:49.477430 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:10:49.477873 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:10:49.551736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11381bdc0>]}
+[0m22:10:49.567414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113827730>]}
+[0m22:10:49.567981 [info ] [MainThread]: Found 2 models, 1 seed, 1 test, 1 source, 428 macros
+[0m22:10:49.568412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1138276d0>]}
+[0m22:10:49.570092 [info ] [MainThread]: 
+[0m22:10:49.570539 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:10:49.570971 [info ] [MainThread]: 
+[0m22:10:49.571502 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:10:49.579352 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_data_transform_main'
+[0m22:10:49.648818 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:49.649365 [debug] [ThreadPool]: On list_data_transform_main: BEGIN
+[0m22:10:49.649787 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:49.664112 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m22:10:49.664648 [debug] [ThreadPool]: Using duckdb connection "list_data_transform_main"
+[0m22:10:49.665090 [debug] [ThreadPool]: On list_data_transform_main: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "list_data_transform_main"} */
+select
+      'data_transform' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'data_transform'
+  
+[0m22:10:49.688247 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m22:10:49.689810 [debug] [ThreadPool]: On list_data_transform_main: ROLLBACK
+[0m22:10:49.690553 [debug] [ThreadPool]: Failed to rollback 'list_data_transform_main'
+[0m22:10:49.690935 [debug] [ThreadPool]: On list_data_transform_main: Close
+[0m22:10:49.692266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '45d25264-0b5d-4904-9c88-5cdb1a91fdd3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113827190>]}
+[0m22:10:49.694391 [debug] [Thread-1 (]: Began running node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:49.694946 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_transform_main, now seed.data_transform.clima_diario_capitais_ne)
+[0m22:10:49.695452 [debug] [Thread-1 (]: Began compiling node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:49.704144 [debug] [Thread-1 (]: Began executing node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:49.705003 [debug] [Thread-1 (]: Finished running node seed.data_transform.clima_diario_capitais_ne
+[0m22:10:49.705733 [debug] [Thread-1 (]: Began running node model.data_transform.stg_clima
+[0m22:10:49.706361 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.data_transform.clima_diario_capitais_ne, now model.data_transform.stg_clima)
+[0m22:10:49.706879 [debug] [Thread-1 (]: Began compiling node model.data_transform.stg_clima
+[0m22:10:49.710311 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_transform.stg_clima"
+[0m22:10:49.711138 [debug] [Thread-1 (]: Began executing node model.data_transform.stg_clima
+[0m22:10:49.711965 [debug] [Thread-1 (]: Finished running node model.data_transform.stg_clima
+[0m22:10:49.712721 [debug] [Thread-1 (]: Began running node model.data_transform.mart_clima_resumo
+[0m22:10:49.713279 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_transform.stg_clima, now model.data_transform.mart_clima_resumo)
+[0m22:10:49.713760 [debug] [Thread-1 (]: Began compiling node model.data_transform.mart_clima_resumo
+[0m22:10:49.716866 [debug] [Thread-1 (]: Writing injected SQL for node "model.data_transform.mart_clima_resumo"
+[0m22:10:49.717573 [debug] [Thread-1 (]: Began executing node model.data_transform.mart_clima_resumo
+[0m22:10:49.718379 [debug] [Thread-1 (]: Finished running node model.data_transform.mart_clima_resumo
+[0m22:10:49.718876 [debug] [Thread-1 (]: Began running node test.data_transform.not_null_stg_clima_data.8e95eb82f6
+[0m22:10:49.719431 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.data_transform.mart_clima_resumo, now test.data_transform.not_null_stg_clima_data.8e95eb82f6)
+[0m22:10:49.719904 [debug] [Thread-1 (]: Began compiling node test.data_transform.not_null_stg_clima_data.8e95eb82f6
+[0m22:10:49.734594 [debug] [Thread-1 (]: Writing injected SQL for node "test.data_transform.not_null_stg_clima_data.8e95eb82f6"
+[0m22:10:49.735609 [debug] [Thread-1 (]: Began executing node test.data_transform.not_null_stg_clima_data.8e95eb82f6
+[0m22:10:49.736449 [debug] [Thread-1 (]: Finished running node test.data_transform.not_null_stg_clima_data.8e95eb82f6
+[0m22:10:49.737518 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:10:49.738007 [debug] [MainThread]: Connection 'test.data_transform.not_null_stg_clima_data.8e95eb82f6' was properly closed.
+[0m22:10:49.739296 [debug] [MainThread]: Command end result
+[0m22:10:49.860753 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:49.862570 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:49.870629 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/run_results.json
+[0m22:10:49.872769 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m22:10:49.873503 [info ] [MainThread]: Building catalog
+[0m22:10:49.944027 [debug] [ThreadPool]: Acquiring new duckdb connection 'data_transform.information_schema'
+[0m22:10:49.954135 [debug] [ThreadPool]: Using duckdb connection "data_transform.information_schema"
+[0m22:10:49.954747 [debug] [ThreadPool]: On data_transform.information_schema: BEGIN
+[0m22:10:49.955247 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:10:49.956056 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:10:49.956570 [debug] [ThreadPool]: Using duckdb connection "data_transform.information_schema"
+[0m22:10:49.957128 [debug] [ThreadPool]: On data_transform.information_schema: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "data_transform", "target_name": "dev", "connection_name": "data_transform.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'data_transform'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'data_transform'
+    )
+    select
+        'data_transform' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        '' as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('clima') or upper(r.schema_name) = upper('main'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m22:10:49.970304 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m22:10:50.007730 [debug] [ThreadPool]: On data_transform.information_schema: ROLLBACK
+[0m22:10:50.008414 [debug] [ThreadPool]: Failed to rollback 'data_transform.information_schema'
+[0m22:10:50.008836 [debug] [ThreadPool]: On data_transform.information_schema: Close
+[0m22:10:50.038497 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/catalog.json
+[0m22:10:50.063624 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/manifest.json
+[0m22:10:50.065565 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/semantic_manifest.json
+[0m22:10:50.066028 [info ] [MainThread]: Catalog written to /Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/target/catalog.json
+[0m22:10:50.067753 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.3346642, "process_in_blocks": "0", "process_kernel_time": 0.257426, "process_mem_max_rss": "131780608", "process_out_blocks": "0", "process_user_time": 2.426041}
+[0m22:10:50.068490 [debug] [MainThread]: Command `dbt docs generate` succeeded at 22:10:50.068347 after 1.34 seconds
+[0m22:10:50.068972 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m22:10:50.069389 [debug] [MainThread]: Connection 'data_transform.information_schema' was properly closed.
+[0m22:10:50.069866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d43f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112e74a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111762ce0>]}
+[0m22:10:50.070386 [debug] [MainThread]: Flushing usage events
+[0m22:10:50.720606 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:52.543968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed5bf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110271960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110272020>]}
+
+
+============================== 22:10:52.550476 | b69284ff-c3a3-47c5-a477-2e5ae001e77a ==============================
+[0m22:10:52.550476 [info ] [MainThread]: Running with dbt=1.9.4
+[0m22:10:52.551230 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/leticiagomesdacostaesilva/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs serve', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:10:52.839738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b69284ff-c3a3-47c5-a477-2e5ae001e77a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10da90640>]}
+[0m22:10:52.902880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b69284ff-c3a3-47c5-a477-2e5ae001e77a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11030fd60>]}
+[0m22:13:29.035587 [error] [MainThread]: Encountered an error:
+
+[0m22:13:29.039790 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/cli/main.py", line 301, in docs_serve
+    results = task.run()
+  File "/Users/leticiagomesdacostaesilva/Library/Caches/pypoetry/virtualenvs/data-transform-RWW9eD2D-py3.10/lib/python3.10/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/usr/local/Cellar/python@3.10/3.10.17/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/local/Cellar/python@3.10/3.10.17/Frameworks/Python.framework/Versions/3.10/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m22:13:29.042022 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 156.5685, "process_in_blocks": "0", "process_kernel_time": 0.180303, "process_mem_max_rss": "105025536", "process_out_blocks": "0", "process_user_time": 1.782157}
+[0m22:13:29.042904 [debug] [MainThread]: Command `dbt docs serve` failed at 22:13:29.042746 after 156.57 seconds
+[0m22:13:29.043596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ed5bf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110561840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110561b70>]}
+[0m22:13:29.044252 [debug] [MainThread]: Flushing usage events
+[0m22:13:29.821603 [debug] [MainThread]: An error was encountered while trying to flush usage events

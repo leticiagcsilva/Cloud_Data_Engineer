@@ -6,6 +6,6 @@ with raw as (
         cast(temp_max as float) as temp_max,
         cast(temp_min as float) as temp_min,
         cast(precipitacao as float) as precipitacao
-    from {{ ref('clima_diario_capitais_ne') }}
+    from "data_transform"."main"."clima_diario_capitais_ne"
 )
 select * from raw

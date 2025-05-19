@@ -49,55 +49,82 @@ data_transform/
 ├── seeds/
 │   └── clima_diario_capitais_ne.csv  # Original weather dataset
 ├── dbt_project.yml
+├── generate_open_meteo_seed.py       # Script to fetch weather data
 ```
 
 ---
 
-## Component Explanation
+## Taskipy Commands
 
-### 1. **Seed**: `clima_diario_capitais_ne.csv`
+To automate execution steps, this project uses **Taskipy**. Here are the commands available:
 
-Contains raw weather data extracted from Open-Meteo. It serves as the starting point of the dbt pipeline. The `seeds/` folder is automatically recognized by dbt.
+```bash
+poetry run task dbt_seed
+```
 
-### 2. **Staging Model**: `stg_clima.sql`
+> Loads the CSV file located in the `seeds/` folder into DuckDB. This is the starting point of the dbt transformation process.
 
-Responsible for:
+```bash
+poetry run task dbt_run
+```
 
-* Converting data types (e.g., from text to `date`, `float`)
-* Normalizing city names (`lower`)
-* Structuring the data for later use in marts
+> Executes the dbt models. It will process the seed via the `stg_clima` model and generate the summarized view `mart_clima_resumo`.
 
-### 3. **Mart Model**: `mart_clima_resumo.sql`
+```bash
+poetry run task dbt_docs
+```
 
-Creates an annual summary by capital:
+> Builds and serves the dbt documentation locally at `http://localhost:8080`. You can browse model metadata, column types, and dependencies.
 
-* Average maximum and minimum temperatures
-* Total precipitation
-* Grouped by `city`, `state`, and `year`
+```bash
+poetry run task dbt_all
+```
 
-### 4. **Schema.yml**: documentation and tests
+> Runs all the above steps in sequence: loads seed, runs models, and starts the documentation site.
 
-Defines:
+```bash
+poetry run task git_stage
+poetry run task git_commit
+poetry run task git_push
+poetry run task git_all
+```
 
-* The seed source (`source`)
-* `not_null` tests for required fields
-* Descriptions for models and columns
+> These commands allow versioning your project easily: stage changes, commit with a message, and push to GitHub.
+
+---
+
+## Documentation Snapshots
+
+The following pages show how dbt interprets and documents the models automatically:
+
+### `stg_clima` model
+
+* Performs data normalization: dates, floats, lowercase city names.
+* Columns include: `data`, `cidade`, `uf`, `temp_max`, `temp_min`, `precipitacao`.
+
+### `mart_clima_resumo` model
+
+* Aggregates data yearly per city and state.
+* Columns include: `cidade`, `uf`, `ano`, `media_temp_max`, `media_temp_min`, `total_precipitacao`.
+
+These views can be explored via the auto-generated dbt documentation site after running `dbt docs serve`.
 
 ---
 
 ## How to Run
 
 ```bash
-# 1. Activate environment and install dependencies (with Poetry)
+# 1. Install dependencies (with Poetry)
 poetry install
 
-# 2. Run dbt commands
-poetry run task dbt_seed     # Loads seeds
-poetry run task dbt_run      # Executes models
-poetry run task dbt_docs     # Generates and serves local documentation
+# 2. Generate seed (optional if already exists)
+python generate_open_meteo_seed.py
+
+# 3. Execute the pipeline
+poetry run task dbt_all
 ```
 
-> Make sure your `profiles.yml` points to the correct `data_transform.duckdb` file.
+> Make sure your `~/.dbt/profiles.yml` is configured for DuckDB and points to the correct project database.
 
 ---
 
@@ -110,6 +137,20 @@ poetry run task dbt_docs     # Generates and serves local documentation
 
 ---
 
-## Note
+## Author
+
+Developed by Letícia Gomes C. S.
 
 This is an educational project designed to demonstrate how to build analytical pipelines using public data and dbt best practices.
+
+---
+
+## Pages Referenced
+
+* **Staging Model (`stg_clima`)**
+  ![stg\_clima](./images/stg_clima.png)
+
+* **Mart Model (`mart_clima_resumo`)**
+  ![mart\_clima\_resumo](./images/mart_clima_resumo.png)
+
+> These screenshots represent the dbt auto-documentation UI. You can generate your own by running `poetry run task dbt_docs`.

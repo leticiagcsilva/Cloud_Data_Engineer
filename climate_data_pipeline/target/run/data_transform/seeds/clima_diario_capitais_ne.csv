@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "data_transform"."main"."clima_diario_capitais_ne";
+    -- dbt seed --
+    
+          COPY "data_transform"."main"."clima_diario_capitais_ne" FROM '/Users/leticiagomesdacostaesilva/Documents/Github/Cloud_Data_Engineer/climate_data_pipeline/seeds/clima_diario_capitais_ne.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
