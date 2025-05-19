@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: clima
+    tables:
+      - name: clima_diario_capitais_ne
+
+models:
+  - name: stg_clima
+    columns:
+      - name: data
+        tests: [not_null]
+  - name: mart_clima_resumo
+    columns:
+      - name: cidade
+      - name: ano
+      - name: media_temp_max

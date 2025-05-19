@@ -1,0 +1,12 @@
+name: 'data_transform'
+version: '1.0'
+config-version: 2
+
+profile: 'data_transform'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  data_transform:
+    +materialized: view
