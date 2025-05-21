@@ -1,28 +1,28 @@
-# Hadoop Ecosystem: Word Count with PySpark on Google Cloud Dataproc
+# Word Count with PySpark on Local Hadoop (Dataproc Simulation)
 
-This subproject demonstrates a distributed word count pipeline using **PySpark** executed on **Google Cloud Dataproc**, with input and output files stored on **Google Cloud Storage (GCS)**.
+This subproject demonstrates a distributed **word count** pipeline using **PySpark**, executed on a local Hadoop cluster with HDFS — simulating the behavior of Google Cloud Dataproc.
 
 ---
 
-## Project Overview
+## Overview
 
 This job:
-- Reads a text file (`.txt`) stored on a GCS bucket
-- Splits the text into words
+- Reads a `.txt` file stored in **local HDFS**
+- Splits text into words
 - Counts the frequency of each word
-- Sorts words by frequency
-- Saves the result back to GCS as a text file
+- Sorts by frequency
+- Writes the result back to HDFS
 
-It uses PySpark’s `textFile`, `flatMap`, `map`, `reduceByKey`, and `saveAsTextFile` transformations. This approach is scalable and can handle large datasets in a distributed environment.
+It uses PySpark transformations like `textFile`, `flatMap`, `map`, `reduceByKey`, `sortBy`, and `saveAsTextFile`. These operations are scalable and compatible with distributed processing.
 
 ---
 
 ## Project Structure
 
 ```
-Ecossistema_Hadoop/
-├── wordcount_spark.py       # Main PySpark job script
-├── README.md                # This documentation file
+distributed-news-pipeline/
+├── wordcount_hdfs.py           # Main PySpark job script
+├── README.md                   # This documentation file
 ```
 
 ---
@@ -30,51 +30,53 @@ Ecossistema_Hadoop/
 ## Technologies Used
 
 - PySpark
-- Google Cloud Platform (GCP)
-- Google Cloud Dataproc
-- Google Cloud Storage (GCS)
-- Hadoop-compatible Input/Output with Spark
+- Local Hadoop HDFS (Docker simulated)
+- Docker Compose (Spark + HDFS)
+- Optional Hive Metastore (for other processing layers)
 
 ---
 
-## How to Run This on GCP Dataproc
+## How to Run Locally
 
-Make sure you have a Dataproc cluster running and a GCS bucket with your input file uploaded.
+Make sure your Spark + HDFS cluster is running via Docker Compose, and that your input text file has been saved to HDFS:
 
-### Submit the job:
-
+### Example upload:
 ```bash
-gcloud dataproc jobs submit pyspark wordcount_spark.py \
-  --cluster=your-cluster-name \
-  --region=your-region \
-  -- gs://your-bucket/livro.txt gs://your-bucket/output_folder
+docker exec -it namenode hdfs dfs -put ./example.txt /data/input/book.txt
 ```
 
-- Replace `your-cluster-name` and `your-region` accordingly.
-- Replace `your-bucket` with the name of your GCS bucket.
-- The output will be saved as part-files inside `output_folder`.
-
----
-
-## Example with Dummy Data
-
-You can upload any `.txt` file to a GCS bucket and run the command:
-
+### Run the job:
 ```bash
-gcloud dataproc jobs submit pyspark wordcount_spark.py \
-  --cluster=cluster-spark \
-  --region=southamerica-east1 \
-  -- gs://meu-bucket/livro.txt gs://meu-bucket/resultado
+spark-submit wordcount_hdfs.py \
+  hdfs://namenode:8020/data/input/book.txt \
+  hdfs://namenode:8020/data/output/wordcount_result
 ```
+
+> Adjust paths as needed.
 
 ---
 
 ## Output
 
-Output files will be created under the specified GCS path in text format. Each line will follow the format:
+Files `part-0000x` will be created in the output folder `/data/output/wordcount_result` inside HDFS, containing:
 
 ```
 (word, count)
 ```
 
+You can view results with:
+```bash
+docker exec -it namenode hdfs dfs -cat /data/output/wordcount_result/part-00000
+```
+
 ---
+
+## Cloud Comparison
+
+| Local (on-prem)     | GCP                         | AWS                   |
+|---------------------|------------------------------|------------------------|
+| Spark + Local HDFS  | Dataproc + Cloud Storage     | EMR + S3               |
+| `spark-submit`      | `gcloud dataproc jobs submit`| AWS CLI / StepFn       |
+| HDFS                | GCS                          | S3                    |
+
+This project mirrors what you would run on Dataproc, but fully local and reproducible using Docker.
