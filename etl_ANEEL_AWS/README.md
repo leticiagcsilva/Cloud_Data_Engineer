@@ -1,4 +1,4 @@
-# Subproject: ETL of ANEEL Complaint Data to AWS
+# ETL of ANEEL Complaint Data to AWS
 
 This subproject is part of the `Cloud_Data_Engineer` repository.
 
